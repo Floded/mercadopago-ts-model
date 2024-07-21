@@ -9,7 +9,7 @@ const port = process.env.PORT;
 
 server.use(cors());
 server.use(express.json());
-server.use("/", mpRouter);
+server.use(mpRouter);
 
 server.listen(port, () => {
   console.log(`Server running on port ${port}`);

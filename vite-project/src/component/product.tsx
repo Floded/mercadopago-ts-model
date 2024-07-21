@@ -14,9 +14,13 @@ export const Product = () => {
         price: 15000
     }
 
-    const handleBuy = async() => {
+    const handleBuyMp = async() => {
       const url = await createPreference(productData);
       if(url) window.location.href = url
+    }
+
+    const handleBuyPayPal = async() => {
+      // TODO redirigir a paypal
     }
     
     
@@ -33,9 +37,15 @@ export const Product = () => {
             <p className="text-xl font-semibold mb-2">${productData.price}</p>
             <button
               className="py-2 w-full bg-emerald-600 rounded-xl"
-              onClick={handleBuy}  // Crear la funcion de handleBuyP
+              onClick={handleBuyMp}  // Crear la funcion de handleBuyP
             >
-              Comprar
+              Comprar Mercadopago
+            </button>
+            <button
+              className="py-2 w-full bg-emerald-600 rounded-xl"
+              onClick={handleBuyPayPal}  // Crear la funcion de handleBuyP
+            >
+              Comprar Paypal
             </button>
           </div>
         </article>

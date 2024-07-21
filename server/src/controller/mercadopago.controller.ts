@@ -1,5 +1,5 @@
 import { Preference } from "mercadopago";
-import { client } from "../mercado-pago.service/mercadopago.service";
+import { client } from "../service/mercadopago.service";
 
 export const controllerPreference = async (req: any) => {
   const body: any = {
