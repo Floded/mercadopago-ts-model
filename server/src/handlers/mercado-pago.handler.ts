@@ -11,13 +11,11 @@ export const handlerCreateOrder = async (req: Request, res: Response) => {
 };
 
 export const handlerSuccess = async (req: Request, res: Response) => {
-  // console.log(req.query);
-
   res.json({ msj: "pago aceptado" });
 };
 
 export const handlerNotification = async (req: Request, res: Response) => {
-  console.log("notificando");
+  console.log(req.query);
 
   res.json({ msj: "notification URL" });
 };

@@ -22,12 +22,11 @@ const handlerCreateOrder = (req, res) => __awaiter(void 0, void 0, void 0, funct
 });
 exports.handlerCreateOrder = handlerCreateOrder;
 const handlerSuccess = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    // console.log(req.query);
     res.json({ msj: "pago aceptado" });
 });
 exports.handlerSuccess = handlerSuccess;
 const handlerNotification = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("notificando");
+    console.log(req.query);
     res.json({ msj: "notification URL" });
 });
 exports.handlerNotification = handlerNotification;
