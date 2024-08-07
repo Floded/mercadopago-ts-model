@@ -11,7 +11,7 @@ export const Product = () => {
     const productData: product = {
         title:'Hamburguesa',
         quantity: 1,
-        price: 15000
+        price: 100
     }
 
     const handleBuyMp = async() => {

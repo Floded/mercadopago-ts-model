@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.controllerPreference = void 0;
 const mercadopago_1 = require("mercadopago");
-const mercadopago_service_1 = require("../mercado-pago.service/mercadopago.service");
+const mercadopago_service_1 = require("../service/mercadopago.service");
 const controllerPreference = (req) => __awaiter(void 0, void 0, void 0, function* () {
     const body = {
         items: [
@@ -22,10 +22,11 @@ const controllerPreference = (req) => __awaiter(void 0, void 0, void 0, function
                 currency_id: "ARS",
             },
         ],
+        notification_url: "https://23p2jbjj-3030.brs.devtunnels.ms/notification",
         back_urls: {
-            success: "/success",
-            failure: "/failure",
-            pending: "/pending",
+            success: "localhost:3030/success",
+            failure: "localhost:3030/failure",
+            pending: "localhost:3030/pending",
         },
         auto_return: "approved",
     };

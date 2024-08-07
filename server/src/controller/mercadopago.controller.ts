@@ -11,10 +11,11 @@ export const controllerPreference = async (req: any) => {
         currency_id: "ARS",
       },
     ],
+    notification_url: "https://23p2jbjj-3030.brs.devtunnels.ms/notification",
     back_urls: {
-      success: "/success",
-      failure: "/failure",
-      pending: "/pending",
+      success: "localhost:3030/success",
+      failure: "localhost:3030/failure",
+      pending: "localhost:3030/pending",
     },
     auto_return: "approved",
   };
