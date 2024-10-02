@@ -13,19 +13,19 @@ exports.controllerPreference = void 0;
 require("dotenv/config");
 const mercadopago_1 = require("mercadopago");
 const mercadopago_service_1 = require("../service/mercadopago.service");
-const controllerPreference = (req) => __awaiter(void 0, void 0, void 0, function* () {
+const controllerPreference = (options) => __awaiter(void 0, void 0, void 0, function* () {
     const body = {
         items: [
             {
-                title: req.body.title,
-                quantity: Number(req.body.quantity),
-                unit_price: Number(req.body.price),
+                title: options.title,
+                quantity: Number(options.quantity),
+                unit_price: Number(options.price),
                 currency_id: "ARS",
             },
         ],
-        notification_url: `${process.env.NGROK_URL}/notification`,
+        notification_url: `${process.env.NGROK_URL}/webhook?source_news=webhooks`,
         back_urls: {
-            success: "localhost:3030/success",
+            success: "http://localhost:5173/",
             failure: "localhost:3030/failure",
             pending: "localhost:3030/pending",
         },

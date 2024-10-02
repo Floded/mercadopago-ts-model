@@ -9,11 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.handlerNotification = exports.handlerSuccess = exports.handlerCreateOrder = void 0;
+exports.handlerSuccess = exports.handlerCreateOrder = void 0;
 const mercadopago_controller_1 = require("../controller/mercadopago.controller");
 const handlerCreateOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield (0, mercadopago_controller_1.controllerPreference)(req);
+        const { body } = req;
+        const response = yield (0, mercadopago_controller_1.controllerPreference)(body);
         res.status(200).json({ redirectUrl: response });
     }
     catch (error) {
@@ -25,9 +26,4 @@ const handlerSuccess = (req, res) => __awaiter(void 0, void 0, void 0, function*
     res.json({ msj: "pago aceptado" });
 });
 exports.handlerSuccess = handlerSuccess;
-const handlerNotification = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(req.query);
-    res.json({ msj: "notification URL" });
-});
-exports.handlerNotification = handlerNotification;
 //# sourceMappingURL=mercado-pago.handler.js.map

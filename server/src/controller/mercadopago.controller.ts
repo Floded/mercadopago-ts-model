@@ -1,20 +1,21 @@
 import "dotenv/config";
 import { Preference } from "mercadopago";
+import { Options } from "../interfaces/interfaces-mp";
 import { client } from "../service/mercadopago.service";
 
-export const controllerPreference = async (req: any) => {
+export const controllerPreference = async (options: Options) => {
   const body: any = {
     items: [
       {
-        title: req.body.title,
-        quantity: Number(req.body.quantity),
-        unit_price: Number(req.body.price),
+        title: options.title,
+        quantity: Number(options.quantity),
+        unit_price: Number(options.price),
         currency_id: "ARS",
       },
     ],
-    notification_url: `${process.env.NGROK_URL}/notification`,
+    notification_url: `${process.env.NGROK_URL}/webhook?source_news=webhooks`,
     back_urls: {
-      success: "localhost:3030/success",
+      success: "http://localhost:5173/",
       failure: "localhost:3030/failure",
       pending: "localhost:3030/pending",
     },

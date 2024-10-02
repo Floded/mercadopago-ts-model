@@ -32,7 +32,7 @@ export const Product = () => {
             <p className="text-xl font-semibold mb-2">${productData.price}</p>
             <button
               className="py-2 w-full bg-emerald-600 rounded-xl"
-              onClick={handleBuyMp}  // Crear la funcion de handleBuyP
+              onClick={handleBuyMp}
             >
               Comprar Mercadopago
             </button>

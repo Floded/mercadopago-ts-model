@@ -3,7 +3,8 @@ import { controllerPreference } from "../controller/mercadopago.controller";
 
 export const handlerCreateOrder = async (req: Request, res: Response) => {
   try {
-    const response = await controllerPreference(req);
+    const { body } = req;
+    const response = await controllerPreference(body);
     res.status(200).json({ redirectUrl: response });
   } catch (error) {
     res.status(404).json({ error });
@@ -12,10 +13,4 @@ export const handlerCreateOrder = async (req: Request, res: Response) => {
 
 export const handlerSuccess = async (req: Request, res: Response) => {
   res.json({ msj: "pago aceptado" });
-};
-
-export const handlerNotification = async (req: Request, res: Response) => {
-  console.log(req.query);
-
-  res.json({ msj: "notification URL" });
 };
