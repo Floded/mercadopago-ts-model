@@ -23,7 +23,7 @@ export const handlerWebhookResponse = async (req: Request, res: Response) => {
 
     res.sendStatus(200);
   } catch (error) {
-    console.log(error);
+    console.log("Error en la respuesta del webhook", error);
     res.sendStatus(500);
   }
 };
